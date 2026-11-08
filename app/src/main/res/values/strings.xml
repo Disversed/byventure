@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ByTravel</string>
+    <string name="app_name">ByVenture</string>
+    <string name="main">Главная</string>
+    <string name="routes">Маршруты</string>
+    <string name="profile">Профиль</string>
+    <string name="title_activity_ui_kit_test">UiKitTestActivity</string>
 </resources>

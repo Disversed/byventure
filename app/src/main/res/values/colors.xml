@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <!-- Основные цвета приложения -->
+    <color name="visual_highlight">#07BC07</color>
+    <color name="main">#1764DC</color>
+    <color name="pressed">#004FC9</color>
+    <color name="disabled_component">#D9DEE4</color>
+    <color name="error">#FF4949</color>
+    <color name="black">#242424</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="disabled_text">#9597A1</color>
+    <color name="light_blue">#C4DEFF</color>
+    <color name="secondary_text">#666666</color>
+    <color name="page_background">#EEEEEE</color>
+
+    <!-- Цвета категорий трат (для бюджета) -->
+    <color name="category_transport">#07BCAA</color>
+    <color name="category_housing">#786CFF</color>
+    <color name="category_tickets">#57C88E</color>
+    <color name="category_entertainment">#FF8888</color>
+    <color name="category_food">#FFC228</color>
 </resources>

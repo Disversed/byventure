@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Отступы страниц и блоков -->
+    <dimen name="page_margin_inline">16dp</dimen>
+    <dimen name="padding_block">15dp</dimen>
+    <dimen name="padding_text">10dp</dimen>
+
+    <!-- Радиусы скругления -->
+    <dimen name="border_radius_20">20dp</dimen>
+    <dimen name="border_radius_15">15dp</dimen>
+
+    <!-- Отступы отношений -->
+    <dimen name="relation_level_1">8dp</dimen>
+    <dimen name="relation_level_2">16dp</dimen>
+    <dimen name="relation_level_3">32dp</dimen>
+</resources>

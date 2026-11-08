@@ -21,6 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.UiKitTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_ui_kit_test"
+            android:theme="@style/Theme.ByTravel"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
