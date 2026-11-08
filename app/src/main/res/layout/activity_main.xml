@@ -5,23 +5,29 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/page_background"
     tools:context=".MainActivity">
 
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/top_bar"
+        app:layout_constraintBottom_toTopOf="@+id/navHostFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navBottomMenu"
-        style="@style/Widget.App.BottomNavigationView"
+        style="@style/ByVenture.BottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"
+        app:layout_constraintTop_toBottomOf="@+id/navHostFragment"
         app:menu="@menu/bottom_nav_menu" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/navHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -29,7 +35,7 @@
         app:layout_constraintBottom_toTopOf="@+id/navBottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
         app:navGraph="@navigation/nav_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

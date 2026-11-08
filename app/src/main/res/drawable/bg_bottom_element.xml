@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- Тонкая 1-пиксельная линия по верхнему краю -->
+    <item android:gravity="top" android:height="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/md_theme_outline" /> <!-- Цвет линии (можно заменить на ваш из цветов) -->
+        </shape>
+    </item>
+
+</layer-list>

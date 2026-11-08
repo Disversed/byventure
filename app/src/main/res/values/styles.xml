@@ -2,68 +2,51 @@
 <resources>
 
     <!-- Button -->
-    <style name="Widget.App.Button.Primary" parent="Widget.MaterialComponents.Button">
+    <style name="ByVenture.Button.Primary" parent="Widget.Material3.Button">
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="cornerRadius">@dimen/border_radius_15</item>
-        <item name="android:backgroundTint">@color/button_state_selector</item>
-        <item name="android:textColor">@color/button_text_state_selector</item>
         <item name="android:textAppearance">@style/TextAppearance.App.ButtonText</item>
         <item name="android:textAllCaps">false</item>
     </style>
 
     <!-- TextInputLayout -->
-    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="ByVenture.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusTopStart">@dimen/border_radius_15</item>
         <item name="boxCornerRadiusTopEnd">@dimen/border_radius_15</item>
         <item name="boxCornerRadiusBottomStart">@dimen/border_radius_15</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/border_radius_15</item>
-        <item name="boxStrokeColor">@color/text_input_state_selector</item>
         <item name="boxStrokeWidth">1.5dp</item>
         <item name="boxStrokeWidthFocused">2dp</item>
-        <item name="hintTextColor">@color/text_input_state_selector</item>
         <!--<item name="hintTextAppearance">@style/TextAppearance.App.ButtonText</item>-->
         <item name="android:textAppearance">@style/TextAppearance.App.Text</item>
     </style>
 
-    <!-- Tabs -->
-    <!-- В материал дизайне есть только табы с чертой, поэтому костыль.
-     Поэтому стили этой фигни нужно будет менять в коде.
-     Если кто-то додумается, как сделать удобнее, сделайте, пожалуйста 🙏-->
-    <style name="Widget.App.TabButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textAppearance">@style/TextAppearance.App.ButtonText</item>
-        <item name="cornerRadius">@dimen/border_radius_15</item>
-        <item name="elevation">0dp</item>
-        <item name="android:stateListAnimator">@null</item>
-    </style>
-    <!-- Стиль для активной вкладки -->
-    <style name="Widget.App.TabButton.Active" parent="Widget.App.TabButton">
-        <item name="android:backgroundTint">@color/main</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-    <!-- Стиль для невыбранной вкладки -->
-    <style name="Widget.App.TabButton.Normal" parent="Widget.App.TabButton">
-        <item name="android:backgroundTint">@android:color/transparent</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-    <!-- Стиль для неактивной вкладки -->
-    <style name="Widget.App.TabButton.Inactive" parent="Widget.App.TabButton">
-        <item name="android:backgroundTint">@android:color/transparent</item>
-        <item name="android:textColor">@color/disabled_text</item>
-    </style>
-
     <!-- BottomNavigationView -->
-    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
-        <item name="android:paddingTop">@dimen/padding_block</item>
-        <item name="android:paddingBottom">@dimen/padding_block</item>
-        <item name="android:background">@android:color/white</item>
+    <style name="ByVenture.BottomNavigationView" parent="Widget.MaterialComponents.BottomSheet.Modal">
         <item name="itemIconTint">@color/bottom_nav_state_selector</item>
         <item name="itemTextColor">@color/bottom_nav_state_selector</item>
         <item name="itemTextAppearanceActive">@style/TextAppearance.App.Title</item>
         <item name="itemTextAppearanceInactive">@style/TextAppearance.App.Title</item>
+        <item name="backgroundColor">@color/md_theme_surfaceContainerLowest_highContrast</item>
+        <item name="backgroundTint">@color/md_theme_surfaceContainerLowest_highContrast</item>
+    </style>
+
+    <!-- FloatingActionButton -->
+    <style name="ByVenture.FloatingActionButton" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="cornerSize">100dp</item>
+        <item name="shapeAppearance">@null</item>
+    </style>
+
+    <!-- Switch -->
+    <style name="ByVenture.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="android:textAppearance">@style/TextAppearance.App.Title</item>
+    </style>
+
+    <!-- CheckBox -->
+    <style name="ByVenture.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <!-- <item name="cornerSize">100dp</item> Не понял, как это сделать -->
+        <item name="android:textAppearance">@style/TextAppearance.App.Title</item>
     </style>
 
 </resources>

@@ -54,8 +54,8 @@
     <style name="TextAppearance.App.Title" parent="TextAppearance.MaterialComponents.Caption">
         <item name="fontFamily">@font/rubik_variable_weight</item>
         <item name="android:textSize">13sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textFontWeight">500</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textFontWeight">400</item>
     </style>
 
 </resources>
