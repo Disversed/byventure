@@ -4,4 +4,38 @@
     <string name="routes">Маршруты</string>
     <string name="profile">Профиль</string>
     <string name="title_activity_ui_kit_test">UiKitTestActivity</string>
+
+
+    <!-- Общее -->
+    <string name="auth_next">Далее</string>
+    <string name="auth_back">Назад</string>
+    <string name="auth_username_hint">Имя пользователя</string>
+    <string name="auth_password_hint">Пароль</string>
+
+    <!-- Вход -->
+    <string name="auth_login_title">Войти в byVenture</string>
+    <string name="auth_login_button">Войти</string>
+    <string name="auth_no_account">У вас нет аккаунта? </string>
+    <string name="auth_register_link">Зарегистрироваться</string>
+    <string name="auth_error_invalid_credentials">Неверное имя пользователя или пароль</string>
+
+    <!-- Регистрация: данные -->
+    <string name="register_title">Укажите свои данные</string>
+    <string name="register_contact_hint">Телефон или email</string>
+    <string name="register_error_contact_format">Введите корректный телефон или email</string>
+    <string name="register_error_contact_taken">Аккаунт с таким телефоном или email уже существует</string>
+    <string name="register_error_username_short">Минимум 3 символа</string>
+    <string name="register_error_username_taken">Это имя пользователя уже занято</string>
+    <string name="register_terms"><![CDATA[Продолжая, вы соглашаетесь с положениями основных документов, а также подтверждаете, что прочли их. Это <a href="https://example.com/terms">Условия предоставления услуг</a> и <a href="https://example.com/privacy">Политика конфиденциальности</a>.]]></string>
+
+    <!-- Регистрация: пароль -->
+    <string name="password_title">Создайте пароль</string>
+    <string name="password_helper">Пароль должен содержать:\n• 8 символов.\n• Латинские буквы.\n• Цифры.\n• Специальные символы.</string>
+    <string name="password_error_header">Пароль должен содержать:</string>
+    <string name="password_req_length">8 символов.</string>
+    <string name="password_req_latin">Латинские буквы.</string>
+    <string name="password_req_digits">Цифры.</string>
+    <string name="password_req_special">Специальные символы.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
