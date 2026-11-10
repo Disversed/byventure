@@ -38,4 +38,52 @@
     <string name="password_req_special">Специальные символы.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="routes_create">Создать маршрут</string>
+    <string name="action_continue">Продолжить</string>
+    <string name="action_add">Добавить</string>
+    <string name="cd_close">Закрыть</string>
+
+    <string name="new_trip_title">Новый маршрут</string>
+    <string name="hint_trip_start">Дата начала поездки</string>
+    <string name="hint_trip_end">Дата завершения поездки</string>
+    <string name="picker_start_title">Дата начала поездки</string>
+    <string name="picker_end_title">Дата завершения поездки</string>
+    <string name="error_date_past">Дата начала не может быть в прошлом</string>
+    <string name="error_end_before_start">Дата завершения раньше даты начала</string>
+    <string name="error_trip_too_long">Поездка не может быть длиннее %d дней</string>
+
+    <string name="budget_trip">Бюджет поездки</string>
+    <string name="hint_budget">Сумма</string>
+    <string name="budget_categories">Категории бюджета</string>
+    <string name="category_entertainment">Развлечения</string>
+    <string name="category_food">Еда</string>
+    <string name="category_tickets">Билеты</string>
+    <string name="category_housing">Жилье</string>
+    <string name="error_budget_empty">Введите сумму бюджета</string>
+    <string name="error_budget_invalid">Некорректная сумма</string>
+    <string name="error_budget_positive">Сумма должна быть больше нуля</string>
+    <string name="error_budget_scale">Не более двух знаков после запятой</string>
+    <string name="error_budget_max">Слишком большая сумма</string>
+    <string name="error_categories">Выберите хотя бы одну категорию</string>
+
+    <string name="tickets_add">Добавить билет или бронь</string>
+    <string name="tab_booking">Бронь</string>
+    <string name="tab_transport">Билет на транспорт</string>
+    <string name="hint_title">Название</string>
+    <string name="hint_category">Категория бюджета</string>
+    <string name="hint_address">Адрес</string>
+    <string name="hint_time">Время</string>
+    <string name="hint_from">Откуда</string>
+    <string name="hint_departure_time">Время отправления</string>
+    <string name="hint_to">Куда</string>
+    <string name="hint_arrival_time">Время прибытия</string>
+    <string name="picker_time_title">Выберите время</string>
+    <string name="error_title_empty">Введите название</string>
+    <string name="error_title_long">Не более %d символов</string>
+    <string name="error_category_empty">Выберите категорию</string>
+    <string name="error_address_empty">Введите адрес</string>
+    <string name="error_address_long">Не более %d символов</string>
+    <string name="error_time_empty">Выберите время</string>
+    <string name="error_arrival_before_departure">Прибытие должно быть позже отправления</string>
 </resources>

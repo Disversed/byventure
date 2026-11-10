@@ -163,4 +163,9 @@
     <color name="md_theme_surfaceContainerHigh_highContrast">#D7D4D4</color>
     <color name="md_theme_surfaceContainerHighest_highContrast">#C9C6C6</color>
 
+    <!-- Дмитрий цвета для карточек маршрутов -->
+    <color name="trip_point">#12C000</color>
+    <color name="screen_background">#EEEEEE</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider">#D6D6D6</color>
 </resources>

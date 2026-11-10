@@ -33,12 +33,8 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-
-    buildFeatures {
         viewBinding = true
     }
-
 }
 
 dependencies {
@@ -60,6 +56,7 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     testImplementation(libs.junit)
+    implementation(libs.recyclerview)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)

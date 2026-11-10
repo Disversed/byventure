@@ -13,4 +13,7 @@
     <dimen name="relation_level_1">8dp</dimen>
     <dimen name="relation_level_2">16dp</dimen>
     <dimen name="relation_level_3">32dp</dimen>
+
+    <!-- размер иконки категорий (Дмитрий новый бюджет) -->
+    <dimen name="category_icon_size">48dp</dimen>
 </resources>
