@@ -30,6 +30,7 @@
         <item name="itemTextAppearanceInactive">@style/TextAppearance.App.Title</item>
         <item name="backgroundColor">@color/md_theme_surfaceContainerLowest_highContrast</item>
         <item name="backgroundTint">@color/md_theme_surfaceContainerLowest_highContrast</item>
+        <item name="itemPaddingTop">4dp</item>
     </style>
 
     <!-- FloatingActionButton -->

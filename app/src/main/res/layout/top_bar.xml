@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/md_theme_surfaceContainerLowest_highContrast"
-    android:paddingStart="0dp"
-    android:paddingEnd="5dp"
     app:menu="@menu/top_bar_menu"
     app:navigationIcon="@drawable/ic_arrow_back">
 

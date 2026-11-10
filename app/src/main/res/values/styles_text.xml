@@ -28,7 +28,7 @@
     <!-- text (18sp, Regular) -->
     <style name="TextAppearance.App.Text" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/rubik_variable_weight</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textFontWeight">400</item>
     </style>
