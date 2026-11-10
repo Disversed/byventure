@@ -3,7 +3,7 @@ package com.byventure.app.ui.auth.logic;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/** Упрощённый TextWatcher: реагирует только на изменение текста. */
+/** Упрощенный TextWatcher: реагирует на изменение текста. */
 public abstract class SimpleTextWatcher implements TextWatcher {
 
     @Override

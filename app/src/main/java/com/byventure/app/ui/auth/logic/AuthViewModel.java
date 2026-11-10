@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel;
 
 /**
  * Общая ViewModel для всех экранов авторизации (привязана к Activity),
- * поэтому данные переживают поворот экрана и переходы между фрагментами.
+ * данные переживают поворот экрана и переходы между фрагментами.
  */
 public class AuthViewModel extends ViewModel {
 
@@ -32,7 +32,7 @@ public class AuthViewModel extends ViewModel {
     public String getPassword() { return password; }
     public void setPassword(String v) { password = v; }
 
-    /** Вызови после успешной регистрации/входа, чтобы не хранить данные дольше нужного. */
+    /** Очистка модели после успешной регистрации/входа */
     public void clear() {
         loginUsername = "";
         loginPassword = "";
@@ -41,7 +41,7 @@ public class AuthViewModel extends ViewModel {
         password = "";
     }
 
-    // ---------- Правила пароля (добавляй свои сюда) ----------
+    // Правила валидации пароля
 
     public static boolean hasMinLength(String p) {
         return p.length() >= 8;

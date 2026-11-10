@@ -33,7 +33,7 @@
     <string name="password_helper">Пароль должен содержать:\n• 8 символов.\n• Латинские буквы.\n• Цифры.\n• Специальные символы.</string>
     <string name="password_error_header">Пароль должен содержать:</string>
     <string name="password_req_length">8 символов.</string>
-    <string name="password_req_latin">Латинские буквы.</string>
+    <string name="password_req_latin">Только латинские символы.</string>
     <string name="password_req_digits">Цифры.</string>
     <string name="password_req_special">Специальные символы.</string>
     <!-- TODO: Remove or change this placeholder text -->

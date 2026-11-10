@@ -42,12 +42,13 @@ public class RegisterFragment extends Fragment {
         binding.btnBack.setOnClickListener(v ->
                 NavHostFragment.findNavController(this).navigateUp());
 
-        // Ссылки в тексте (замени URL в strings.xml на свои)
+
+        // TODO: Ссылки в тексте (заменить URL в strings.xml на нужные)
         binding.tvTerms.setText(HtmlCompat.fromHtml(
                 getString(R.string.register_terms), HtmlCompat.FROM_HTML_MODE_LEGACY));
         binding.tvTerms.setMovementMethod(LinkMovementMethod.getInstance());
 
-        // Восстанавливаем данные из ViewModel (до подключения слушателей)
+        // Восстановление данных из ViewModel (до подключения слушателей)
         binding.etContact.setText(viewModel.getContact());
         binding.etUsername.setText(viewModel.getUsername());
 
@@ -105,17 +106,17 @@ public class RegisterFragment extends Fragment {
 
         if (!valid) return;
 
-        // Данные уже лежат в ViewModel, идём к вводу пароля
+        // Данные уже во ViewModel, переход к вводу пароля
         NavHostFragment.findNavController(this)
                 .navigate(R.id.action_registerFragment_to_passwordFragment);
     }
 
-    // TODO: заглушка. Замени на проверку на сервере
+    // TODO: это заглушка. Заменить на проверку на сервере
     private boolean isContactTaken(String contact) {
         return "test@test.com".equalsIgnoreCase(contact);
     }
 
-    // TODO: заглушка. Замени на проверку на сервере
+    // TODO: это заглушка. Заменить на проверку на сервере
     private boolean isUsernameTaken(String username) {
         return "Дима".equalsIgnoreCase(username);
     }

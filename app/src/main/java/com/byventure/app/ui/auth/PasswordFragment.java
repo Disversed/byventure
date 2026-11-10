@@ -62,20 +62,27 @@ public class PasswordFragment extends Fragment {
         validatePassword(viewModel.getPassword());
     }
 
-    /** Проверка на каждый введённый символ. */
+    /** Проверяю на каждый введенный символ. */
     private void validatePassword(String password) {
         boolean valid = AuthViewModel.isPasswordValid(password);
         binding.btnNext.setEnabled(valid);
 
-        if (password.isEmpty() || valid) {
-            // Ошибки нет, снова helper text со списком требований
+        if (valid) {
+            // Пароль правильный — убирать и ошибку, и helper text
             binding.tilPassword.setError(null);
+            binding.tilPassword.setHelperText(null);
+        } else if (password.isEmpty()) {
+            // Поле пустое — показать стандартную подсказку с требованиями
+            binding.tilPassword.setError(null);
+            binding.tilPassword.setHelperText(getString(R.string.password_helper));
         } else {
+            // Пароль вводится, но еще не соответствует требованиям — показать ошибки
+            binding.tilPassword.setHelperText(null);
             binding.tilPassword.setError(buildErrorText(password));
         }
     }
 
-    /** Показываю только те требования, которые ещё не выполнены */
+    /** Показываются только те требования, которые еще не выполнены */
     private String buildErrorText(String password) {
         StringBuilder sb = new StringBuilder(getString(R.string.password_error_header));
         if (!AuthViewModel.hasMinLength(password)) {
@@ -97,8 +104,8 @@ public class PasswordFragment extends Fragment {
         // Все данные регистрации лежат в ViewModel:
         // viewModel.getContact(), viewModel.getUsername(), viewModel.getPassword()
 
-        // TODO: пароль подходит. Здесь логика: отправить данные в базу/на сервер,
-        //  затем viewModel.clear() и переход на главный экран, например:
+        // TODO: пароль подходит. Здесь логика: отправить данные в базу на сервер,
+        //  затем viewModel.clear() и переход на главный экран
         //  NavHostFragment.findNavController(this).navigate(R.id.action_passwordFragment_to_homeFragment);
     }
 

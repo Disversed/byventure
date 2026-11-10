@@ -27,7 +27,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class AuthFragment extends Fragment {
 
-    // TODO: пока заглушка, потом будет проверка на сервере
+    // TODO: пока заглушка с моим именем, потом будет проверка на сервере
     private static final String STUB_USERNAME = "Дима";
 
     private FragmentAuthBinding binding;
@@ -46,7 +46,7 @@ public class AuthFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
 
-        // Восстанавливаем данные из ViewModel (до подключения слушателей)
+        // Восстановление данных из ViewModel (до подключения слушателей)
         binding.etUsername.setText(viewModel.getLoginUsername());
         binding.etPassword.setText(viewModel.getLoginPassword());
 
@@ -85,7 +85,7 @@ public class AuthFragment extends Fragment {
         String username = textOf(binding.etUsername);
         // String password = textOf(binding.etPassword);
 
-        // TODO: Заменить на реальную проверку запрос на сервер
+        // TODO: Заменить на реальную проверку запросом на сервер
         if (!STUB_USERNAME.equals(username)) {
             binding.tilUsername.setError(getString(R.string.auth_error_invalid_credentials));
             return;
