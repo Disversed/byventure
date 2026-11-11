@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.bottom_sheets;
 
 import android.app.Dialog;
 import android.view.Window;

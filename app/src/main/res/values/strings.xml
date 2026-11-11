@@ -69,7 +69,7 @@
 
     <string name="tickets_add">Добавить билет или бронь</string>
     <string name="tab_booking">Бронь</string>
-    <string name="tab_transport">Билет на транспорт</string>
+    <string name="tab_transport">Билет</string>
     <string name="hint_title">Название</string>
     <string name="hint_category">Категория бюджета</string>
     <string name="hint_address">Адрес</string>

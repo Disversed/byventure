@@ -1,10 +1,12 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.models;
 
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.byventure.app.ui.trip.new_trip.recycler_view_logic.TripRow;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -23,13 +25,17 @@ public class NewTripViewModel extends ViewModel {
 
     private final MutableLiveData<LocalDate> startDate = new MutableLiveData<>();
     private final MutableLiveData<LocalDate> endDate = new MutableLiveData<>();
-    private final MutableLiveData<List<TripEntry>> entries =
-            new MutableLiveData<>(Collections.<TripEntry>emptyList());
-    /** Список для RecyclerView: заголовок дня, записи, кнопка «Добавить». */
-    private final MediatorLiveData<List<TripRow>> rows = new MediatorLiveData<>();
 
     @Nullable private BigDecimal budget;
     private final Set<BudgetCategory> selectedCategories = EnumSet.noneOf(BudgetCategory.class);
+
+    /** Список карточек билетов и броней */
+    private final MutableLiveData<List<TripEntry>> entries =
+            new MutableLiveData<>(Collections.<TripEntry>emptyList());
+
+    /** Список для RecyclerView: заголовок дня, записи, кнопка «Добавить». */
+    private final MediatorLiveData<List<TripRow>> rows = new MediatorLiveData<>();
+
 
     public NewTripViewModel() {
         rows.addSource(startDate, v -> rebuildRows());

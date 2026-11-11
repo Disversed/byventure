@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.models;
 
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
@@ -7,6 +7,8 @@ import androidx.annotation.StringRes;
 import com.byventure.app.R;
 
 public enum BudgetCategory {
+
+    // потом в принципе это можно брать из БД
     ENTERTAINMENT(R.string.category_entertainment, R.color.category_entertainment, R.drawable.ic_plus),
     FOOD(R.string.category_food, R.color.category_food, R.drawable.ic_plus),
     TICKETS(R.string.category_tickets, R.color.category_tickets, R.drawable.ic_plus),

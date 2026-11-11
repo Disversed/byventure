@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.models;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,7 +13,7 @@ public final class TripEntry {
 
     public enum Type { BOOKING, TRANSPORT_TICKET }
 
-    /** Сортировка: дата -> время начала -> id (для стабильности). */
+    /** Сортировка: дата -> время начала -> id */
     public static final Comparator<TripEntry> COMPARATOR =
             Comparator.comparing(TripEntry::getDate)
                     .thenComparing(TripEntry::getFromTime)

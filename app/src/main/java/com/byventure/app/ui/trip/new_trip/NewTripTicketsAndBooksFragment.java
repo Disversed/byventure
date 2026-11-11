@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.byventure.app.databinding.FragmentNewTripTicketsAndBooksBinding;
+import com.byventure.app.ui.trip.new_trip.bottom_sheets.AddTripEntryBottomSheet;
+import com.byventure.app.ui.trip.new_trip.models.NewTripViewModel;
+import com.byventure.app.ui.trip.new_trip.recycler_view_logic.TripRowAdapter;
 
 public class NewTripTicketsAndBooksFragment extends Fragment {
 

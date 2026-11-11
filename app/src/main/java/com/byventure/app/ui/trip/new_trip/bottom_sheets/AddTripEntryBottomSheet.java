@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.bottom_sheets;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -14,6 +14,11 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.SheetAddTripEntryBinding;
+import com.byventure.app.ui.trip.new_trip.models.NewTripViewModel;
+import com.byventure.app.ui.trip.new_trip.SimpleTextWatcher;
+import com.byventure.app.ui.trip.new_trip.models.BudgetCategory;
+import com.byventure.app.ui.trip.new_trip.models.TripEntry;
+import com.byventure.app.ui.trip.new_trip.models.TripFormats;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;

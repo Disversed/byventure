@@ -13,6 +13,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.FragmentTripsBinding;
+import com.byventure.app.ui.trip.new_trip.bottom_sheets.NewTripDatesBottomSheet;
+import com.byventure.app.ui.trip.new_trip.models.NewTripViewModel;
 
 public class TripsFragment extends Fragment {
 

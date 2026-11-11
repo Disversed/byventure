@@ -15,6 +15,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.FragmentNewTripBudgetBinding;
+import com.byventure.app.ui.trip.new_trip.models.BudgetCategory;
+import com.byventure.app.ui.trip.new_trip.models.NewTripViewModel;
 
 import java.math.BigDecimal;
 import java.util.EnumMap;
