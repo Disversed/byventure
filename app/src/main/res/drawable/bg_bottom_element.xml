@@ -5,7 +5,7 @@
     <!-- Тонкая 1-пиксельная линия по верхнему краю -->
     <item android:gravity="top" android:height="1dp">
         <shape android:shape="rectangle">
-            <solid android:color="@color/md_theme_outline" /> <!-- Цвет линии (можно заменить на ваш из цветов) -->
+            <solid android:color="@color/md_theme_outline" />
         </shape>
     </item>
 

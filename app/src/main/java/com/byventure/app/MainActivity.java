@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
             R.id.passwordFragment
     ));
 
+    private final Set<Integer> hideBottomBarOn = new HashSet<>(Arrays.asList(
+            R.id.tripDetailFragment
+    ));
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
             int visibility = hideBarsOn.contains(destination.getId()) ? View.GONE : View.VISIBLE;
             bottomNavigationView.setVisibility(visibility);
             binding.topBar.getRoot().setVisibility(visibility);
+        });
+
+        // скрытие только нижнего меню
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            int visibility = hideBottomBarOn.contains(destination.getId()) ? View.GONE : View.VISIBLE;
+            bottomNavigationView.setVisibility(visibility);
         });
     }
 }

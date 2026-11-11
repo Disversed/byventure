@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/authFragment">
+    app:startDestination="@id/tripDetailFragment">
 
     <fragment
         android:id="@+id/feedFragment"
@@ -43,5 +43,9 @@
         android:name="com.byventure.app.ui.auth.PasswordFragment"
         android:label="fragment_password"
         tools:layout="@layout/fragment_password" />
+    <fragment
+        android:id="@+id/tripDetailFragment"
+        android:name="com.byventure.app.ui.trip.details.TripDetailFragment"
+        android:label="TripDetailFragment" />
 
 </navigation>

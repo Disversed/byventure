@@ -50,4 +50,45 @@
         <item name="android:textAppearance">@style/TextAppearance.App.Title</item>
     </style>
 
+    <!-- CardView -->
+    <style name="ByVenture.CardView" parent="Base.Widget.Material3.CardView">
+        <item name="cardCornerRadius">@dimen/border_radius_20</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="contentPadding">@dimen/padding_block</item>
+        <item name="strokeColor">@color/md_theme_outlineVariant</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <!-- TabLayout -->
+    <style name="ByVenture.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="android:background">@color/white</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabGravity">fill</item>
+    </style>
+
+    <!-- SegmentedToggleGroup -->
+    <style name="ByVenture.SegmentedToggleGroup" parent="Widget.Material3.MaterialButtonToggleGroup">
+        <!-- Цвет фона подложки (светло-серый) -->
+        <item name="android:background">@drawable/bg_segmented_container</item>
+        <item name="singleSelection">true</item>
+        <item name="selectionRequired">true</item>
+    </style>
+    <!-- SegmentedButton -->
+    <style name="ByVenture.SegmentedButton" parent="Widget.Material3.Button.UnelevatedButton">
+        <item name="android:textColor">@color/toggle_text_color_selector</item>
+        <!-- Белая заливка для активного состояния, прозрачная для неактивного -->
+        <item name="backgroundTint">@color/toggle_bg_color_selector</item>
+        <!-- Полное скругление углов ("pill" shape) -->
+        <item name="cornerRadius">18dp</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="elevation">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.Text</item>
+    </style>
+
 </resources>

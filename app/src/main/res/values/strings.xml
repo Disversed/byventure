@@ -36,6 +36,9 @@
     <string name="password_req_latin">Только латинские символы.</string>
     <string name="password_req_digits">Цифры.</string>
     <string name="password_req_special">Специальные символы.</string>
+
+    <!-- Главная -->
+    <string name="bel_rub">%d Br</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

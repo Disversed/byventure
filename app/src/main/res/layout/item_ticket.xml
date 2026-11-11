@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ByVenture.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Верхняя строка: Название брони/билета и время -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTicketTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.App.H3"
+                tools:text="Бронь Bloom cafe"
+                android:paddingEnd="@dimen/relation_level_1"
+                tools:ignore="RtlSymmetry" />
+
+            <View
+                android:id="@+id/vTicketIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                tools:background="@drawable/ic_category_food" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/relation_level_2">
+
+            <TextView
+                android:id="@+id/tvTicketAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="ул. Пушкина, д. 90"
+                android:textAppearance="@style/TextAppearance.App.Text" />
+
+            <TextView
+                android:id="@+id/tvTicketTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="10:20"
+                android:textAppearance="@style/TextAppearance.App.Text" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet_container"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="32dp">
+
+    <!-- Верхняя панель: Заголовок и кнопка закрытия (крестик) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Добавить чек"
+            android:textAppearance="@style/TextAppearance.App.H2" />
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_cross" />
+    </RelativeLayout>
+
+    <!-- Поле ввода: Название платежа -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/relation_level_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Название платежа"
+            android:textAppearance="@style/TextAppearance.App.ButtonText" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/ByVenture.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etReceiptName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Платёж"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Поле ввода: Сумма -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/relation_level_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Сумма"
+            android:textAppearance="@style/TextAppearance.App.ButtonText" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/ByVenture.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etReceiptSum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Сумма, Br"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Используйте только цифры"
+            android:textAppearance="@style/TextAppearance.App.SmallText" />
+    </LinearLayout>
+
+    <!-- СЕКЦИЯ: Категории (RecyclerView в карточке) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="10dp"
+            android:text="Категории"
+            android:textAppearance="@style/TextAppearance.App.ButtonText" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/ByVenture.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#a9a8a9">
+
+            <!-- Горизонтальный список категорий -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_category_selection" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:paddingStart="10dp"
+            android:text="Платеж добавится в выбранную категорию"
+            android:textAppearance="@style/TextAppearance.App.SmallText" />
+    </LinearLayout>
+
+    <!-- Кнопка подтверждения -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddReceipt"
+        style="@style/ByVenture.Button.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Добавить" />
+
+</LinearLayout>

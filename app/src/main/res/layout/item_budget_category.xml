@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ByVenture.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Иконка категории -->
+        <ImageView
+            android:id="@+id/ivCategoryIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            tools:src="@drawable/ic_category_entertainment" />
+
+        <!-- Название категории -->
+        <TextView
+            android:id="@+id/tvCategoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.App.Text"
+            tools:text="Развлечения" />
+
+        <!-- Сумма трат по категории -->
+        <TextView
+            android:id="@+id/tvCategorySum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.App.Text"
+            tools:text="150 Br" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
