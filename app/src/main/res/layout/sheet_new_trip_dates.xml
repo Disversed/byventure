@@ -27,43 +27,73 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvTitle" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilStart"
-        style="@style/ByVenture.TextInputLayout"
+    <!-- дата начала -->
+    <TextView
+        android:id="@+id/tvStartLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/relation_level_3"
-        android:hint="@string/hint_trip_start"
+        android:text="@string/hint_trip_start"
+        android:textAppearance="@style/TextAppearance.App.ButtonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etStart"
-            style="@style/ByVenture.PickerEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:importantForAutofill="no" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStart"
+        style="@style/ByVenture.Button.PickerField"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/relation_level_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStartLabel" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilEnd"
-        style="@style/ByVenture.TextInputLayout"
+    <TextView
+        android:id="@+id/tvStartError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.App.SmallText"
+        android:textColor="?attr/colorError"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnStart" />
+
+    <!-- дата завершения -->
+    <TextView
+        android:id="@+id/tvEndLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/relation_level_2"
-        android:hint="@string/hint_trip_end"
+        android:text="@string/hint_trip_end"
+        android:textAppearance="@style/TextAppearance.App.ButtonText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilStart">
+        app:layout_constraintTop_toBottomOf="@id/tvStartError" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEnd"
-            style="@style/ByVenture.PickerEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:importantForAutofill="no" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnd"
+        style="@style/ByVenture.Button.PickerField"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/relation_level_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEndLabel" />
+
+    <TextView
+        android:id="@+id/tvEndError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.App.SmallText"
+        android:textColor="?attr/colorError"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEnd" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnContinue"
@@ -75,6 +105,6 @@
         android:text="@string/action_continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilEnd" />
+        app:layout_constraintTop_toBottomOf="@id/tvEndError" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

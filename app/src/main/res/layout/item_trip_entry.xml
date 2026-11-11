@@ -6,7 +6,10 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/relation_level_1"
     android:background="@drawable/bg_card"
-    android:padding="@dimen/padding_block">
+    android:padding="@dimen/padding_block"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <TextView
         android:id="@+id/tvTitle"
@@ -21,14 +24,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Бронь Hampton by Hilton Brest" />
 
+    <!-- точка отправления / адрес брони -->
     <ImageView
         android:id="@+id/ivCategory"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
         android:layout_marginStart="@dimen/relation_level_1"
         android:background="@drawable/bg_category_icon"
         android:importantForAccessibility="no"
-        android:padding="6dp"
+        android:padding="5dp"
         android:src="@drawable/ic_plus"
         app:layout_constraintBottom_toBottomOf="@id/tvTitle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,11 +41,10 @@
         app:tint="@android:color/white"
         tools:backgroundTint="@color/category_housing" />
 
-    <!-- точка отправления / адрес брони -->
     <View
         android:id="@+id/dotFrom"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:background="@drawable/bg_dot"
         app:layout_constraintBottom_toBottomOf="@id/tvFromAddress"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +75,7 @@
     <!-- точка прибытия (только для билета) -->
     <View
         android:id="@+id/line"
-        android:layout_width="3dp"
+        android:layout_width="4dp"
         android:layout_height="0dp"
         android:background="@color/trip_point"
         app:layout_constraintBottom_toTopOf="@id/dotTo"
@@ -82,8 +85,8 @@
 
     <View
         android:id="@+id/dotTo"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:background="@drawable/bg_dot"
         app:layout_constraintBottom_toBottomOf="@id/tvToAddress"
         app:layout_constraintStart_toStartOf="parent"

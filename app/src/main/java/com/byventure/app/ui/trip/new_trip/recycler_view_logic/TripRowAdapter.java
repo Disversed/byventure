@@ -14,9 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.byventure.app.databinding.ItemAddEntryBinding;
 import com.byventure.app.databinding.ItemDateHeaderBinding;
 import com.byventure.app.databinding.ItemTripEntryBinding;
+import com.byventure.app.ui.trip.new_trip.TripEntry;
 import com.byventure.app.ui.trip.new_trip.models.BudgetCategory;
-import com.byventure.app.ui.trip.new_trip.models.TripEntry;
 import com.byventure.app.ui.trip.new_trip.models.TripFormats;
+import com.byventure.app.ui.trip.new_trip.recycler_view_logic.TripRow;
 
 import java.time.LocalDate;
 
@@ -24,6 +25,7 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
 
     public interface Listener {
         void onAddClick(LocalDate date);
+        void onEntryClick(TripEntry entry);
     }
 
     private final Listener listener;
@@ -37,8 +39,10 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
 
             @Override
             public boolean areContentsTheSame(@NonNull TripRow a, @NonNull TripRow b) {
-                // записи неизменяемы и имеют уникальный id -> одинаковый ключ = одинаковое содержимое
-                return a.getKey().equals(b.getKey());
+                if (a instanceof TripRow.Entry && b instanceof TripRow.Entry) {
+                    return ((TripRow.Entry) a).entry.equals(((TripRow.Entry) b).entry);
+                }
+                return true; // заголовок и кнопка определяются ключом
             }
         });
         this.listener = listener;
@@ -88,7 +92,7 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
         }
     }
 
-    static class EntryHolder extends RecyclerView.ViewHolder {
+    class EntryHolder extends RecyclerView.ViewHolder {
         private final ItemTripEntryBinding b;
 
         EntryHolder(ItemTripEntryBinding b) {
@@ -113,6 +117,8 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
             } else {
                 b.groupTo.setVisibility(View.GONE);
             }
+
+            b.getRoot().setOnClickListener(v -> listener.onEntryClick(e));
         }
     }
 

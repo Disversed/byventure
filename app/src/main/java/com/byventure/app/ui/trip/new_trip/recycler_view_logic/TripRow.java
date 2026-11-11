@@ -1,6 +1,6 @@
 package com.byventure.app.ui.trip.new_trip.recycler_view_logic;
 
-import com.byventure.app.ui.trip.new_trip.models.TripEntry;
+import com.byventure.app.ui.trip.new_trip.TripEntry;
 
 import java.time.LocalDate;
 

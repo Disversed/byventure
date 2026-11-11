@@ -6,6 +6,7 @@ import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.byventure.app.ui.trip.new_trip.TripEntry;
 import com.byventure.app.ui.trip.new_trip.recycler_view_logic.TripRow;
 
 import java.math.BigDecimal;
@@ -78,6 +79,31 @@ public class NewTripViewModel extends ViewModel {
         List<TripEntry> list = new ArrayList<>(entries.getValue());
         list.add(entry);
         Collections.sort(list, TripEntry.COMPARATOR);
+        entries.setValue(Collections.unmodifiableList(list));
+    }
+    @Nullable
+    public TripEntry findEntry(String id) {
+        for (TripEntry e : entries.getValue()) {
+            if (e.getId().equals(id)) return e;
+        }
+        return null;
+    }
+
+    /** Заменяет запись с тем же id и пересортировывает список. */
+    public void updateEntry(TripEntry updated) {
+        List<TripEntry> list = new ArrayList<>();
+        for (TripEntry e : entries.getValue()) {
+            list.add(e.getId().equals(updated.getId()) ? updated : e);
+        }
+        Collections.sort(list, TripEntry.COMPARATOR);
+        entries.setValue(Collections.unmodifiableList(list));
+    }
+
+    public void removeEntry(String id) {
+        List<TripEntry> list = new ArrayList<>();
+        for (TripEntry e : entries.getValue()) {
+            if (!e.getId().equals(id)) list.add(e);
+        }
         entries.setValue(Collections.unmodifiableList(list));
     }
 
