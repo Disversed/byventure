@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/authFragment">
+    app:startDestination="@id/tripsFragment">
 
     <fragment
         android:id="@+id/feedFragment"
@@ -44,5 +44,26 @@
         android:label="fragment_password"
         tools:layout="@layout/fragment_password" />
 
+    <fragment
+        android:id="@+id/tripsFragment"
+        android:name="com.byventure.app.ui.trip.new_trip.TripsFragment"
+        android:label="Маршруты">
+        <action
+            android:id="@+id/action_trips_to_budget"
+            app:destination="@id/newTripBudgetFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/newTripBudgetFragment"
+        android:name="com.byventure.app.ui.trip.new_trip.NewTripBudgetFragment"
+        android:label="Бюджет">
+        <action
+            android:id="@+id/action_budget_to_tickets"
+            app:destination="@id/newTripTicketsAndBooksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newTripTicketsAndBooksFragment"
+        android:name="com.byventure.app.ui.trip.new_trip.NewTripTicketsAndBooksFragment"
+        android:label="Билеты и брони" />
 </navigation>

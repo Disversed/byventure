@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background">
+
+    <TextView
+        android:id="@+id/tvBudgetLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/page_margin_inline"
+        android:layout_marginTop="@dimen/relation_level_2"
+        android:layout_marginEnd="@dimen/page_margin_inline"
+        android:text="@string/budget_trip"
+        android:textAppearance="@style/TextAppearance.App.H3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilBudget"
+        style="@style/ByVenture.TextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/page_margin_inline"
+        android:layout_marginTop="@dimen/relation_level_1"
+        android:layout_marginEnd="@dimen/page_margin_inline"
+        android:hint="@string/hint_budget"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBudgetLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etBudget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="12"
+            android:textAppearance="@style/TextAppearance.App.Text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvCategoriesLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/page_margin_inline"
+        android:layout_marginTop="@dimen/relation_level_2"
+        android:layout_marginEnd="@dimen/page_margin_inline"
+        android:text="@string/budget_categories"
+        android:textAppearance="@style/TextAppearance.App.H3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilBudget" />
+
+    <!-- фон карточки категорий -->
+    <View
+        android:id="@+id/cardCategories"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/page_margin_inline"
+        android:layout_marginTop="@dimen/relation_level_1"
+        android:layout_marginEnd="@dimen/page_margin_inline"
+        android:background="@drawable/bg_card"
+        app:layout_constraintBottom_toBottomOf="@id/anchorCardEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCategoriesLabel" />
+
+    <!-- Развлечения -->
+    <ImageView
+        android:id="@+id/ivEntertainment"
+        android:layout_width="@dimen/category_icon_size"
+        android:layout_height="@dimen/category_icon_size"
+        android:layout_marginStart="@dimen/padding_block"
+        android:layout_marginTop="@dimen/padding_block"
+        android:background="@drawable/bg_category_icon"
+        android:backgroundTint="@color/category_entertainment"
+        android:importantForAccessibility="no"
+        android:padding="12dp"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toStartOf="@id/cardCategories"
+        app:layout_constraintTop_toTopOf="@id/cardCategories"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvEntertainment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/relation_level_2"
+        android:text="@string/category_entertainment"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBottom_toBottomOf="@id/ivEntertainment"
+        app:layout_constraintEnd_toStartOf="@id/cbEntertainment"
+        app:layout_constraintStart_toEndOf="@id/ivEntertainment"
+        app:layout_constraintTop_toTopOf="@id/ivEntertainment" />
+
+    <CheckBox
+        android:id="@+id/cbEntertainment"
+        style="@style/ByVenture.CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/relation_level_1"
+        app:layout_constraintBottom_toBottomOf="@id/ivEntertainment"
+        app:layout_constraintEnd_toEndOf="@id/cardCategories"
+        app:layout_constraintTop_toTopOf="@id/ivEntertainment" />
+
+    <!-- Еда -->
+    <ImageView
+        android:id="@+id/ivFood"
+        android:layout_width="@dimen/category_icon_size"
+        android:layout_height="@dimen/category_icon_size"
+        android:layout_marginTop="@dimen/relation_level_2"
+        android:background="@drawable/bg_category_icon"
+        android:backgroundTint="@color/category_food"
+        android:importantForAccessibility="no"
+        android:padding="12dp"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toStartOf="@id/ivEntertainment"
+        app:layout_constraintTop_toBottomOf="@id/ivEntertainment"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvFood"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/relation_level_2"
+        android:text="@string/category_food"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBottom_toBottomOf="@id/ivFood"
+        app:layout_constraintEnd_toStartOf="@id/cbFood"
+        app:layout_constraintStart_toEndOf="@id/ivFood"
+        app:layout_constraintTop_toTopOf="@id/ivFood" />
+
+    <CheckBox
+        android:id="@+id/cbFood"
+        style="@style/ByVenture.CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/relation_level_1"
+        app:layout_constraintBottom_toBottomOf="@id/ivFood"
+        app:layout_constraintEnd_toEndOf="@id/cardCategories"
+        app:layout_constraintTop_toTopOf="@id/ivFood" />
+
+    <!-- Билеты -->
+    <ImageView
+        android:id="@+id/ivTickets"
+        android:layout_width="@dimen/category_icon_size"
+        android:layout_height="@dimen/category_icon_size"
+        android:layout_marginTop="@dimen/relation_level_2"
+        android:background="@drawable/bg_category_icon"
+        android:backgroundTint="@color/category_tickets"
+        android:importantForAccessibility="no"
+        android:padding="12dp"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toStartOf="@id/ivEntertainment"
+        app:layout_constraintTop_toBottomOf="@id/ivFood"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvTickets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/relation_level_2"
+        android:text="@string/category_tickets"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBottom_toBottomOf="@id/ivTickets"
+        app:layout_constraintEnd_toStartOf="@id/cbTickets"
+        app:layout_constraintStart_toEndOf="@id/ivTickets"
+        app:layout_constraintTop_toTopOf="@id/ivTickets" />
+
+    <CheckBox
+        android:id="@+id/cbTickets"
+        style="@style/ByVenture.CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/relation_level_1"
+        app:layout_constraintBottom_toBottomOf="@id/ivTickets"
+        app:layout_constraintEnd_toEndOf="@id/cardCategories"
+        app:layout_constraintTop_toTopOf="@id/ivTickets" />
+
+    <!-- Жилье -->
+    <ImageView
+        android:id="@+id/ivHousing"
+        android:layout_width="@dimen/category_icon_size"
+        android:layout_height="@dimen/category_icon_size"
+        android:layout_marginTop="@dimen/relation_level_2"
+        android:background="@drawable/bg_category_icon"
+        android:backgroundTint="@color/category_housing"
+        android:importantForAccessibility="no"
+        android:padding="12dp"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toStartOf="@id/ivEntertainment"
+        app:layout_constraintTop_toBottomOf="@id/ivTickets"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvHousing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/relation_level_2"
+        android:text="@string/category_housing"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBottom_toBottomOf="@id/ivHousing"
+        app:layout_constraintEnd_toStartOf="@id/cbHousing"
+        app:layout_constraintStart_toEndOf="@id/ivHousing"
+        app:layout_constraintTop_toTopOf="@id/ivHousing" />
+
+    <CheckBox
+        android:id="@+id/cbHousing"
+        style="@style/ByVenture.CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/relation_level_1"
+        app:layout_constraintBottom_toBottomOf="@id/ivHousing"
+        app:layout_constraintEnd_toEndOf="@id/cardCategories"
+        app:layout_constraintTop_toTopOf="@id/ivHousing" />
+
+    <!-- нижняя граница карточки -->
+    <Space
+        android:id="@+id/anchorCardEnd"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/padding_block"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivHousing" />
+
+    <TextView
+        android:id="@+id/tvCategoriesError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/page_margin_inline"
+        android:layout_marginTop="@dimen/relation_level_1"
+        android:layout_marginEnd="@dimen/page_margin_inline"
+        android:text="@string/error_categories"
+        android:textAppearance="@style/TextAppearance.App.SmallText"
+        android:textColor="?attr/colorError"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardCategories" />
+
+    <!-- нижняя панель с кнопкой -->
+    <View
+        android:id="@+id/bottomBarBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/card_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerBottom" />
+
+    <View
+        android:id="@+id/dividerBottom"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/relation_level_2"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toTopOf="@id/btnContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnContinue"
+        style="@style/ByVenture.Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/page_margin_inline"
+        android:layout_marginEnd="@dimen/page_margin_inline"
+        android:layout_marginBottom="@dimen/relation_level_2"
+        android:enabled="false"
+        android:text="@string/action_continue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

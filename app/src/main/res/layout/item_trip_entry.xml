@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/relation_level_1"
+    android:background="@drawable/bg_card"
+    android:padding="@dimen/padding_block">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.App.H3"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/ivCategory"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Бронь Hampton by Hilton Brest" />
+
+    <ImageView
+        android:id="@+id/ivCategory"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="@dimen/relation_level_1"
+        android:background="@drawable/bg_category_icon"
+        android:importantForAccessibility="no"
+        android:padding="6dp"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTitle"
+        app:layout_constraintTop_toTopOf="@id/tvTitle"
+        app:tint="@android:color/white"
+        tools:backgroundTint="@color/category_housing" />
+
+    <!-- точка отправления / адрес брони -->
+    <View
+        android:id="@+id/dotFrom"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/bg_dot"
+        app:layout_constraintBottom_toBottomOf="@id/tvFromAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFromAddress" />
+
+    <TextView
+        android:id="@+id/tvFromAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/relation_level_1"
+        android:layout_marginTop="@dimen/relation_level_2"
+        android:layout_marginEnd="@dimen/relation_level_1"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintEnd_toStartOf="@id/tvFromTime"
+        app:layout_constraintStart_toEndOf="@id/dotFrom"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        tools:text="ул. Пушкина, д. 99" />
+
+    <TextView
+        android:id="@+id/tvFromTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvFromAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="16:00" />
+
+    <!-- точка прибытия (только для билета) -->
+    <View
+        android:id="@+id/line"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:background="@color/trip_point"
+        app:layout_constraintBottom_toTopOf="@id/dotTo"
+        app:layout_constraintEnd_toEndOf="@id/dotFrom"
+        app:layout_constraintStart_toStartOf="@id/dotFrom"
+        app:layout_constraintTop_toBottomOf="@id/dotFrom" />
+
+    <View
+        android:id="@+id/dotTo"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/bg_dot"
+        app:layout_constraintBottom_toBottomOf="@id/tvToAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvToAddress" />
+
+    <TextView
+        android:id="@+id/tvToAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/relation_level_1"
+        android:layout_marginTop="@dimen/relation_level_3"
+        android:layout_marginEnd="@dimen/relation_level_1"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvToTime"
+        app:layout_constraintStart_toEndOf="@id/dotTo"
+        app:layout_constraintTop_toBottomOf="@id/tvFromAddress"
+        tools:text="Старое Село" />
+
+    <TextView
+        android:id="@+id/tvToTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvToAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="12:00" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="line,dotTo,tvToAddress,tvToTime" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
