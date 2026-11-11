@@ -144,15 +144,24 @@
             </com.google.android.material.card.MaterialCardView>
 
             <!-- RecyclerView со списком трат по категориям -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvBudgetCategories"
+            <com.google.android.material.card.MaterialCardView
+                style="@style/ByVenture.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:contentPadding="0dp"
                 android:layout_marginTop="@dimen/relation_level_2"
                 android:layout_marginBottom="@dimen/relation_level_2"
-                android:nestedScrollingEnabled="false"
-                tools:itemCount="7"
-                tools:listitem="@layout/item_budget_category" />
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBudgetCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="7"
+                    tools:listitem="@layout/item_budget_category" />
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

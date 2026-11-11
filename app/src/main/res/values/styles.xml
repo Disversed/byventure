@@ -28,9 +28,9 @@
         <item name="itemTextColor">@color/bottom_nav_state_selector</item>
         <item name="itemTextAppearanceActive">@style/TextAppearance.App.Title</item>
         <item name="itemTextAppearanceInactive">@style/TextAppearance.App.Title</item>
-        <item name="backgroundColor">@color/md_theme_surfaceContainerLowest_highContrast</item>
-        <item name="backgroundTint">@color/md_theme_surfaceContainerLowest_highContrast</item>
+        <item name="backgroundTint">@null</item>
         <item name="itemPaddingTop">4dp</item>
+        <item name="android:background">@drawable/bg_bottom_element</item>
     </style>
 
     <!-- FloatingActionButton -->
@@ -69,7 +69,6 @@
 
     <!-- SegmentedToggleGroup -->
     <style name="ByVenture.SegmentedToggleGroup" parent="Widget.Material3.MaterialButtonToggleGroup">
-        <!-- Цвет фона подложки (светло-серый) -->
         <item name="android:background">@drawable/bg_segmented_container</item>
         <item name="singleSelection">true</item>
         <item name="selectionRequired">true</item>
@@ -77,9 +76,7 @@
     <!-- SegmentedButton -->
     <style name="ByVenture.SegmentedButton" parent="Widget.Material3.Button.UnelevatedButton">
         <item name="android:textColor">@color/toggle_text_color_selector</item>
-        <!-- Белая заливка для активного состояния, прозрачная для неактивного -->
         <item name="backgroundTint">@color/toggle_bg_color_selector</item>
-        <!-- Полное скругление углов ("pill" shape) -->
         <item name="cornerRadius">18dp</item>
         <item name="strokeWidth">0dp</item>
         <item name="elevation">0dp</item>
