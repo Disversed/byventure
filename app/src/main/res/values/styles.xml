@@ -88,4 +88,17 @@
         <item name="android:textAppearance">@style/TextAppearance.App.Text</item>
     </style>
 
+
+    <!-- Стили Дмитрия -->
+    <style name="ByVenture.TextInputLayout.Dropdown" parent="ByVenture.TextInputLayout">
+        <item name="endIconMode">dropdown_menu</item>
+    </style>
+    <!-- Поле, которое открывает пикер (ввод вручную запрещён) -->
+    <style name="ByVenture.PickerEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">true</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:inputType">none</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.Text</item>
+    </style>
 </resources>

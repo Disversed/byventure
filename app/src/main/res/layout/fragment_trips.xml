@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background">
+
+    <View
+        android:id="@+id/cardCreate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/page_margin_inline"
+        android:layout_marginTop="@dimen/page_margin_inline"
+        android:layout_marginEnd="@dimen/page_margin_inline"
+        android:background="@drawable/bg_card"
+        app:layout_constraintBottom_toBottomOf="@id/anchorCardEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivPlus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/relation_level_3"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintEnd_toEndOf="@id/cardCreate"
+        app:layout_constraintStart_toStartOf="@id/cardCreate"
+        app:layout_constraintTop_toTopOf="@id/cardCreate" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCreate"
+        style="@style/ByVenture.Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/padding_block"
+        android:layout_marginTop="@dimen/relation_level_3"
+        android:layout_marginEnd="@dimen/padding_block"
+        android:text="@string/routes_create"
+        app:layout_constraintEnd_toEndOf="@id/cardCreate"
+        app:layout_constraintStart_toStartOf="@id/cardCreate"
+        app:layout_constraintTop_toBottomOf="@id/ivPlus" />
+
+    <Space
+        android:id="@+id/anchorCardEnd"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/padding_block"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCreate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.byventure.app;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 
@@ -13,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import com.byventure.app.databinding.ActivityMainBinding;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Arrays;
@@ -32,10 +34,12 @@ public class MainActivity extends AppCompatActivity {
             R.id.passwordFragment
     ));
 
+    // Экраны, где скрыто только нижнее меню
     private final Set<Integer> hideBottomBarOn = new HashSet<>(Arrays.asList(
+            R.id.newTripBudgetFragment,
+            R.id.newTripTicketsAndBooksFragment,
             R.id.tripDetailFragment
     ));
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +74,29 @@ public class MainActivity extends AppCompatActivity {
             binding.topBar.getRoot().setVisibility(visibility);
         });
 
-        // скрытие только нижнего меню
+
+        // Верхнее меню
+        MaterialToolbar toolbar = binding.topBar.getRoot();
+        // стрелка «назад» работает как системная кнопка
+        toolbar.setNavigationOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
+
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            int visibility = hideBottomBarOn.contains(destination.getId()) ? View.GONE : View.VISIBLE;
-            bottomNavigationView.setVisibility(visibility);
+            int id = destination.getId();
+            boolean hideAll = hideBarsOn.contains(id);
+            boolean hideBottom = hideAll || hideBottomBarOn.contains(id);
+
+            bottomNavigationView.setVisibility(hideBottom ? View.GONE : View.VISIBLE);
+            toolbar.setVisibility(hideAll ? View.GONE : View.VISIBLE);
+
+            // «верхнеуровневый» экран = есть в нижнем меню
+            boolean topLevel = bottomNavigationView.getMenu().findItem(id) != null;
+            toolbar.setNavigationIcon(topLevel ? null : R.drawable.ic_arrow_back);
+
+            MenuItem settings = toolbar.getMenu().findItem(R.id.action_right_icon);
+            if (settings != null) settings.setVisible(topLevel);
+
+            // заголовок из android:label в nav_graph
+            binding.topBar.tvToolbarTitle.setText(destination.getLabel());
         });
     }
 }

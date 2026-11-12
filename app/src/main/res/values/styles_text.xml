@@ -3,7 +3,7 @@
 
     <!-- H1 (32sp, Bold) -->
     <style name="TextAppearance.App.H1" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="fontFamily">@font/rubik_variable_weight</item>
+        <item name="fontFamily">@font/rubik_family</item>
         <item name="android:textSize">32sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textFontWeight">500</item>
@@ -11,7 +11,7 @@
 
     <!-- H2 (24sp, Bold) -->
     <style name="TextAppearance.App.H2" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/rubik_variable_weight</item>
+        <item name="fontFamily">@font/rubik_family</item>
         <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textFontWeight">500</item>
@@ -19,7 +19,7 @@
 
     <!-- H3 (20sp, Bold) -->
     <style name="TextAppearance.App.H3" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/rubik_variable_weight</item>
+        <item name="fontFamily">@font/rubik_family</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textFontWeight">500</item>
@@ -27,7 +27,7 @@
 
     <!-- text (18sp, Regular) -->
     <style name="TextAppearance.App.Text" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/rubik_variable_weight</item>
+        <item name="fontFamily">@font/rubik_family</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textFontWeight">400</item>
@@ -35,7 +35,7 @@
 
     <!-- smallText (14sp, Regular) -->
     <style name="TextAppearance.App.SmallText" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/rubik_variable_weight</item>
+        <item name="fontFamily">@font/rubik_family</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textFontWeight">400</item>
@@ -43,7 +43,7 @@
 
     <!-- buttonText (16sp, Bold) -->
     <style name="TextAppearance.App.ButtonText" parent="TextAppearance.MaterialComponents.Button">
-        <item name="fontFamily">@font/rubik_variable_weight</item>
+        <item name="fontFamily">@font/rubik_family</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textFontWeight">500</item>
@@ -52,7 +52,7 @@
 
     <!-- title (13sp, Bold) -->
     <style name="TextAppearance.App.Title" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="fontFamily">@font/rubik_variable_weight</item>
+        <item name="fontFamily">@font/rubik_family</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textFontWeight">400</item>
