@@ -33,19 +33,16 @@ public class TripDetailFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // 1. Устанавливаем адаптер для ViewPager2
         TripPagerAdapter pagerAdapter = new TripPagerAdapter(this);
         binding.viewPager.setAdapter(pagerAdapter);
 
-        // 2. Связываем TabLayout и ViewPager2 через TabLayoutMediator (задаем заголовки табов)
         String[] titles = new String[]{"Маршрут", "Бюджет", "События", "Билеты"};
 
         new TabLayoutMediator(binding.tabLayout, binding.viewPager, (tab, position) -> {
             tab.setText(titles[position]);
         }).attach();
 
-        setupBottomBarForCurrentTab(0); // Устанавливаем состояние для первой вкладки по умолчанию
-        // Слушаем смену вкладок в ViewPager2, чтобы менять текст и действие нижней кнопки под активный раздел
+        setupBottomBarForCurrentTab(0);
         binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {

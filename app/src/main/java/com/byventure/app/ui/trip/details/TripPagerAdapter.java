@@ -5,10 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.byventure.app.ui.trip.budget.TripBudgetFragment;
-// Импорты для остальных фрагментов (когда они будут созданы):
-// import com.byventure.app.ui.route.RouteFragment;
-// import com.byventure.app.ui.events.EventsFragment;
-// import com.byventure.app.ui.tickets.TicketsFragment;
 
 public class TripPagerAdapter extends FragmentStateAdapter {
 
@@ -19,7 +15,6 @@ public class TripPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        // Возвращаем соответствующий фрагмент по индексу вкладки
         switch (position) {
             case 0:
                 // return new RouteFragment(); // Заглушка для "Маршрут"
@@ -31,7 +26,7 @@ public class TripPagerAdapter extends FragmentStateAdapter {
                 return new TripBudgetFragment();
             case 3:
                 // return new TicketsFragment(); // Заглушка для "Билеты"
-                return new TripBudgetFragment();
+                return new TripTicketsAndBooksFragment();
             default:
                 return new TripBudgetFragment();
         }

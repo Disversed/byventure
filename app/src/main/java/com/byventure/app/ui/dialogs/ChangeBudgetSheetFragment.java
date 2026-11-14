@@ -8,17 +8,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.byventure.app.databinding.FragmentChangeBudgetSheetBinding;
+import com.byventure.app.databinding.SheetChangeBudgetBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class ChangeBudgetSheetFragment extends BottomSheetDialogFragment {
 
-    private FragmentChangeBudgetSheetBinding binding;
+    private SheetChangeBudgetBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentChangeBudgetSheetBinding.inflate(inflater, container, false);
+        binding = SheetChangeBudgetBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 

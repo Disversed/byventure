@@ -3,27 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/tripsFragment">
+    app:startDestination="@id/tripDetailFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.byventure.app.ui.main.MainFragment"
+        android:label="Маршрут"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/tripDetailFragment"
+        android:name="com.byventure.app.ui.trip.details.TripDetailFragment"
+        android:label="TripDetailFragment" />
 
     <fragment
         android:id="@+id/feedFragment"
         android:name="com.byventure.app.ui.feed.FeedFragment"
-        android:label="fragment_feed"
+        android:label="Лента"
         tools:layout="@layout/fragment_feed" />
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.byventure.app.ui.main.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.byventure.app.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Профиль"
         tools:layout="@layout/fragment_profile" />
+
     <fragment
         android:id="@+id/authFragment"
         android:name="com.byventure.app.ui.auth.AuthFragment"
-        android:label="fragment_auth"
+        android:label="Авторизация"
         tools:layout="@layout/fragment_auth" >
         <action
             android:id="@+id/action_authFragment_to_registerFragment"
@@ -32,7 +38,7 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.byventure.app.ui.auth.RegisterFragment"
-        android:label="fragment_register"
+        android:label="Регистрация"
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_passwordFragment"
@@ -41,12 +47,8 @@
     <fragment
         android:id="@+id/passwordFragment"
         android:name="com.byventure.app.ui.auth.PasswordFragment"
-        android:label="fragment_password"
+        android:label="Регистрация"
         tools:layout="@layout/fragment_password" />
-    <fragment
-        android:id="@+id/tripDetailFragment"
-        android:name="com.byventure.app.ui.trip.details.TripDetailFragment"
-        android:label="TripDetailFragment" />
 
     <fragment
         android:id="@+id/tripsFragment"
@@ -56,7 +58,6 @@
             android:id="@+id/action_trips_to_budget"
             app:destination="@id/newTripBudgetFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/newTripBudgetFragment"
         android:name="com.byventure.app.ui.trip.new_trip.NewTripBudgetFragment"
@@ -65,9 +66,9 @@
             android:id="@+id/action_budget_to_tickets"
             app:destination="@id/newTripTicketsAndBooksFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/newTripTicketsAndBooksFragment"
         android:name="com.byventure.app.ui.trip.new_trip.NewTripTicketsAndBooksFragment"
         android:label="Билеты и брони" />
+
 </navigation>

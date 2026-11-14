@@ -9,17 +9,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.byventure.app.databinding.FragmentAddReceiptSheetBinding;
+import com.byventure.app.databinding.SheetAddReceiptBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class AddReceiptSheetFragment extends BottomSheetDialogFragment {
 
-    private FragmentAddReceiptSheetBinding binding;
+    private SheetAddReceiptBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentAddReceiptSheetBinding.inflate(inflater, container, false);
+        binding = SheetAddReceiptBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 

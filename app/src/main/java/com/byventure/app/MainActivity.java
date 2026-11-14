@@ -6,6 +6,7 @@ import android.view.View;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -90,13 +91,16 @@ public class MainActivity extends AppCompatActivity {
 
             // «верхнеуровневый» экран = есть в нижнем меню
             boolean topLevel = bottomNavigationView.getMenu().findItem(id) != null;
-            toolbar.setNavigationIcon(topLevel ? null : R.drawable.ic_arrow_back);
+            toolbar.setNavigationIcon(topLevel ? null : ContextCompat.getDrawable(this, R.drawable.ic_arrow_back));
 
             MenuItem settings = toolbar.getMenu().findItem(R.id.action_right_icon);
             if (settings != null) settings.setVisible(topLevel);
 
             // заголовок из android:label в nav_graph
-            binding.topBar.tvToolbarTitle.setText(destination.getLabel());
+            CharSequence label = destination.getLabel();
+            if (label != null) {
+                binding.topBar.tvToolbarTitle.setText(label);
+            }
         });
     }
 }

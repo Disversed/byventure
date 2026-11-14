@@ -129,77 +129,86 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content">
 
-                    <!-- Текущая точка -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:background="@drawable/bg_dot_active" />
-
-                        <TextView
-                            android:id="@+id/tvRouteCurrentTitle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:layout_weight="1"
-                            tools:text="Загрузка..."
-                            android:textAppearance="@style/TextAppearance.App.Text" />
-
-                        <TextView
-                            android:id="@+id/tvRouteCurrentTime"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:text="--"
-                            android:textAppearance="@style/TextAppearance.App.Text" />
-                    </LinearLayout>
-
-                    <!-- Линия таймлайна -->
+                    <!-- Верхняя точка (текущая) -->
                     <View
-                        android:layout_width="2dp"
-                        android:layout_height="24dp"
-                        android:layout_marginStart="5dp"
-                        android:background="@color/visual_highlight" />
+                        android:id="@+id/dotFrom"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:background="@drawable/bg_dot"
+                        app:layout_constraintTop_toTopOf="@id/tvRouteCurrentTitle"
+                        app:layout_constraintBottom_toBottomOf="@id/tvRouteCurrentTitle"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                    <!-- Следующая точка -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tvRouteCurrentTitle"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:textAppearance="@style/TextAppearance.App.Text"
+                        app:layout_constraintEnd_toStartOf="@id/tvRouteCurrentTime"
+                        app:layout_constraintStart_toEndOf="@id/dotFrom"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Загрузка..." />
 
-                        <View
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:background="@drawable/bg_dot_next" />
+                    <TextView
+                        android:id="@+id/tvRouteCurrentTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.App.Text"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tvRouteCurrentTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:text="--" />
 
-                        <TextView
-                            android:id="@+id/tvRouteNextTitle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:layout_weight="1"
-                            tools:text="Загрузка..."
-                            android:textAppearance="@style/TextAppearance.App.Text" />
+                    <!-- Соединительная линия таймлайна -->
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="3dp"
+                        android:layout_height="0dp"
+                        android:background="@color/trip_point"
+                        app:layout_constraintTop_toBottomOf="@id/dotFrom"
+                        app:layout_constraintBottom_toTopOf="@id/dotTo"
+                        app:layout_constraintStart_toStartOf="@id/dotFrom"
+                        app:layout_constraintEnd_toEndOf="@id/dotFrom" />
 
-                        <TextView
-                            android:id="@+id/tvRouteNextTime"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:text="--"
-                            android:textAppearance="@style/TextAppearance.App.Text" />
-                    </LinearLayout>
+                    <!-- Нижняя точка (следующая) -->
+                    <View
+                        android:id="@+id/dotTo"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:background="@drawable/bg_dot_next"
+                        app:layout_constraintTop_toTopOf="@id/tvRouteNextTitle"
+                        app:layout_constraintBottom_toBottomOf="@id/tvRouteNextTitle"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/tvRouteNextTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="16dp"
+                        android:textAppearance="@style/TextAppearance.App.Text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvRouteNextTime"
+                        app:layout_constraintStart_toEndOf="@id/dotTo"
+                        app:layout_constraintTop_toBottomOf="@id/tvRouteCurrentTitle"
+                        tools:text="Загрузка..." />
+
+                    <TextView
+                        android:id="@+id/tvRouteNextTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.App.Text"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tvRouteNextTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:text="--" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Секция 3: Билеты (Динамический список через RecyclerView) -->
