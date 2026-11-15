@@ -1,10 +1,11 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.common;
 
 import android.app.Dialog;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+import com.byventure.app.R;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -24,5 +25,9 @@ public abstract class ExpandedBottomSheet extends BottomSheetDialogFragment {
             Window w = dialog.getWindow();
             if (w != null) w.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         }
+    }
+    @Override
+    public int getTheme() {
+        return R.style.ThemeOverlay_ByVenture_BottomSheetDialog;
     }
 }

@@ -72,15 +72,12 @@
 
     <string name="tickets_add">Добавить билет или бронь</string>
     <string name="tab_booking">Бронь</string>
-    <string name="tab_transport">Билет на транспорт</string>
+    <string name="tab_transport">Билет</string>
     <string name="hint_title">Название</string>
     <string name="hint_category">Категория бюджета</string>
     <string name="hint_address">Адрес</string>
-    <string name="hint_time">Время</string>
     <string name="hint_from">Откуда</string>
-    <string name="hint_departure_time">Время отправления</string>
     <string name="hint_to">Куда</string>
-    <string name="hint_arrival_time">Время прибытия</string>
     <string name="picker_time_title">Выберите время</string>
     <string name="error_title_empty">Введите название</string>
     <string name="error_title_long">Не более %d символов</string>
@@ -89,4 +86,20 @@
     <string name="error_address_long">Не более %d символов</string>
     <string name="error_time_empty">Выберите время</string>
     <string name="error_arrival_before_departure">Прибытие должно быть позже отправления</string>
+
+    <string name="entry_title_add">Добавить</string>
+    <string name="entry_title_edit">Изменить</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_save">Сохранить</string>
+    <string name="delete_title">Удалить карточку?</string>
+    <string name="delete_message">Это действие нельзя отменить.</string>
+
+    <string name="hint_pick_date">Выберите дату</string>
+    <string name="time_booking">Время</string>
+    <string name="time_departure">Отправление</string>
+    <string name="time_arrival">Прибытие</string>
+
+    <string name="events_add">Добавить событие</string>
+    <string name="time_event">Время</string>
+    <string name="summary_save">Сохранить маршрут</string>
 </resources>

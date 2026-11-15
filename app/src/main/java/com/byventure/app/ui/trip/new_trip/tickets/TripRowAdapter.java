@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.tickets;
 
 import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
@@ -12,8 +12,12 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.byventure.app.databinding.ItemAddEntryBinding;
-import com.byventure.app.databinding.ItemDateHeaderBinding;
 import com.byventure.app.databinding.ItemTripEntryBinding;
+import com.byventure.app.ui.trip.new_trip.common.DateHeaderHolder;
+import com.byventure.app.ui.trip.new_trip.model.TripEntry;
+import com.byventure.app.ui.trip.new_trip.model.BudgetCategory;
+import com.byventure.app.ui.trip.new_trip.common.TripFormats;
+import com.byventure.app.ui.trip.new_trip.model.TripRow;
 
 import java.time.LocalDate;
 
@@ -21,6 +25,7 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
 
     public interface Listener {
         void onAddClick(LocalDate date);
+        void onEntryClick(TripEntry entry);
     }
 
     private final Listener listener;
@@ -34,8 +39,10 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
 
             @Override
             public boolean areContentsTheSame(@NonNull TripRow a, @NonNull TripRow b) {
-                // записи неизменяемы и имеют уникальный id -> одинаковый ключ = одинаковое содержимое
-                return a.getKey().equals(b.getKey());
+                if (a instanceof TripRow.Entry && b instanceof TripRow.Entry) {
+                    return ((TripRow.Entry) a).entry.equals(((TripRow.Entry) b).entry);
+                }
+                return true; // заголовок и кнопка определяются ключом
             }
         });
         this.listener = listener;
@@ -52,7 +59,7 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         switch (viewType) {
             case TripRow.TYPE_HEADER:
-                return new HeaderHolder(ItemDateHeaderBinding.inflate(inflater, parent, false));
+                return DateHeaderHolder.create(parent);
             case TripRow.TYPE_ENTRY:
                 return new EntryHolder(ItemTripEntryBinding.inflate(inflater, parent, false));
             default:
@@ -63,8 +70,8 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         TripRow row = getItem(position);
-        if (holder instanceof HeaderHolder) {
-            ((HeaderHolder) holder).bind((TripRow.DateHeader) row);
+        if (holder instanceof DateHeaderHolder) {
+            ((DateHeaderHolder) holder).bind(((TripRow.DateHeader) row).date);
         } else if (holder instanceof EntryHolder) {
             ((EntryHolder) holder).bind(((TripRow.Entry) row).entry);
         } else {
@@ -72,20 +79,9 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
         }
     }
 
-    static class HeaderHolder extends RecyclerView.ViewHolder {
-        private final ItemDateHeaderBinding b;
 
-        HeaderHolder(ItemDateHeaderBinding b) {
-            super(b.getRoot());
-            this.b = b;
-        }
 
-        void bind(TripRow.DateHeader row) {
-            b.tvDate.setText(row.date.format(TripFormats.DAY_HEADER));
-        }
-    }
-
-    static class EntryHolder extends RecyclerView.ViewHolder {
+    class EntryHolder extends RecyclerView.ViewHolder {
         private final ItemTripEntryBinding b;
 
         EntryHolder(ItemTripEntryBinding b) {
@@ -110,6 +106,8 @@ public class TripRowAdapter extends ListAdapter<TripRow, RecyclerView.ViewHolder
             } else {
                 b.groupTo.setVisibility(View.GONE);
             }
+
+            b.getRoot().setOnClickListener(v -> listener.onEntryClick(e));
         }
     }
 

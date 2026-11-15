@@ -13,6 +13,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.FragmentTripsBinding;
+import com.byventure.app.ui.trip.new_trip.dates.NewTripDatesBottomSheet;
 
 public class TripsFragment extends Fragment {
 
@@ -36,7 +37,7 @@ public class TripsFragment extends Fragment {
             new NewTripDatesBottomSheet().show(getChildFragmentManager(), NewTripDatesBottomSheet.TAG);
         });
 
-        // попап сообщает, что даты введены -> идём на «Бюджет»
+        // попап сообщает, что даты введены -> переход на «Бюджет»
         getChildFragmentManager().setFragmentResultListener(
                 NewTripDatesBottomSheet.RESULT_KEY, getViewLifecycleOwner(),
                 (key, bundle) -> NavHostFragment.findNavController(this)

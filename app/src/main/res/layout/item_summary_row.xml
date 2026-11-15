@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_middle">
+
+    <!-- линия таймлайна: от верха строки до точки и от точки до низа -->
+    <View
+        android:id="@+id/lineTop"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@color/trip_point"
+        app:layout_constraintBottom_toTopOf="@id/dot"
+        app:layout_constraintEnd_toEndOf="@id/dot"
+        app:layout_constraintStart_toStartOf="@id/dot"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/lineBottom"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@color/trip_point"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/dot"
+        app:layout_constraintStart_toStartOf="@id/dot"
+        app:layout_constraintTop_toBottomOf="@id/dot" />
+
+    <View
+        android:id="@+id/dot"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="@dimen/padding_block"
+        android:background="@drawable/bg_dot"
+        app:layout_constraintBottom_toBottomOf="@id/tvAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAddress" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="@dimen/relation_level_1"
+        android:layout_marginBottom="14dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvTime"
+        app:layout_constraintStart_toEndOf="@id/dot"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Hampton by Hilton Brest" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding_block"
+        android:textAppearance="@style/TextAppearance.App.Text"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="16:00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

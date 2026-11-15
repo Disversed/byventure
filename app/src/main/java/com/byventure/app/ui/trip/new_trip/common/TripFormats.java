@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.common;
 
 import java.time.Instant;
 import java.time.LocalDate;

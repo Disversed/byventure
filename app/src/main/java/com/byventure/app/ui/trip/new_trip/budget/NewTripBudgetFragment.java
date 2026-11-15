@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.budget;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -15,6 +15,9 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.FragmentNewTripBudgetBinding;
+import com.byventure.app.ui.trip.new_trip.NewTripViewModel;
+import com.byventure.app.ui.trip.new_trip.common.SimpleTextWatcher;
+import com.byventure.app.ui.trip.new_trip.model.BudgetCategory;
 
 import java.math.BigDecimal;
 import java.util.EnumMap;
@@ -46,7 +49,7 @@ public class NewTripBudgetFragment extends Fragment {
         bindRow(BudgetCategory.TICKETS, binding.cbTickets, binding.ivTickets, binding.tvTickets);
         bindRow(BudgetCategory.HOUSING, binding.cbHousing, binding.ivHousing, binding.tvHousing);
 
-        // при первом входе восстанавливаем то, что уже лежит во ViewModel (вернулись назад)
+        // при первом входе восстанавливаем то, что уже лежит во ViewModel
         if (savedInstanceState == null) {
             BigDecimal saved = vm.getBudgetValue();
             if (saved != null) binding.etBudget.setText(saved.stripTrailingZeros().toPlainString());

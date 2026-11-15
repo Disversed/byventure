@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.dates;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.SheetNewTripDatesBinding;
+import com.byventure.app.ui.trip.new_trip.common.FieldUi;
+import com.byventure.app.ui.trip.new_trip.common.ExpandedBottomSheet;
+import com.byventure.app.ui.trip.new_trip.NewTripViewModel;
+import com.byventure.app.ui.trip.new_trip.common.TripFormats;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -39,14 +43,13 @@ public class NewTripDatesBottomSheet extends ExpandedBottomSheet {
         vm = new ViewModelProvider(requireActivity()).get(NewTripViewModel.class);
 
         binding.btnClose.setOnClickListener(v -> dismiss());
-        binding.etStart.setOnClickListener(v -> showPicker(true));
-        binding.etEnd.setOnClickListener(v -> showPicker(false));
+        binding.btnStart.setOnClickListener(v -> showPicker(true));
+        binding.btnEnd.setOnClickListener(v -> showPicker(false));
         binding.btnContinue.setOnClickListener(v -> {
             getParentFragmentManager().setFragmentResult(RESULT_KEY, new Bundle());
             dismiss();
         });
 
-        // даты живут во ViewModel -> переживают поворот экрана
         vm.getStartDate().observe(getViewLifecycleOwner(), d -> render());
         vm.getEndDate().observe(getViewLifecycleOwner(), d -> render());
     }
@@ -55,8 +58,9 @@ public class NewTripDatesBottomSheet extends ExpandedBottomSheet {
         LocalDate s = vm.getStartDate().getValue();
         LocalDate e = vm.getEndDate().getValue();
 
-        binding.etStart.setText(s == null ? "" : s.format(TripFormats.DATE));
-        binding.etEnd.setText(e == null ? "" : e.format(TripFormats.DATE));
+        String placeholder = getString(R.string.hint_pick_date);
+        FieldUi.setPickerValue(binding.btnStart, s == null ? null : s.format(TripFormats.DATE), placeholder);
+        FieldUi.setPickerValue(binding.btnEnd, e == null ? null : e.format(TripFormats.DATE), placeholder);
 
         String startError = null;
         String endError = null;
@@ -70,8 +74,8 @@ public class NewTripDatesBottomSheet extends ExpandedBottomSheet {
                 endError = getString(R.string.error_trip_too_long, NewTripViewModel.MAX_TRIP_DAYS);
             }
         }
-        binding.tilStart.setError(startError);
-        binding.tilEnd.setError(endError);
+        FieldUi.setError(binding.btnStart, binding.tvStartError, startError);
+        FieldUi.setError(binding.btnEnd, binding.tvEndError, endError);
 
         binding.btnContinue.setEnabled(s != null && e != null && startError == null && endError == null);
     }
@@ -102,6 +106,8 @@ public class NewTripDatesBottomSheet extends ExpandedBottomSheet {
         });
         picker.show(getChildFragmentManager(), isStart ? "pick_start" : "pick_end");
     }
+
+
 
     @Override
     public void onDestroyView() {
