@@ -168,7 +168,7 @@
             android:id="@+id/btnToTime"
             style="@style/ByVenture.Button.PickerField"
             android:layout_width="150dp"
-            android:layout_height="56dp"
+            android:layout_height="60dp"
             android:layout_marginTop="5dp"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"

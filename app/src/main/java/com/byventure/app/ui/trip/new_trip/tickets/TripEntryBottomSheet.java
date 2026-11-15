@@ -14,9 +14,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.byventure.app.R;
 import com.byventure.app.databinding.SheetTripEntryBinding;
 import com.byventure.app.ui.trip.new_trip.NewTripViewModel;
-import com.byventure.app.ui.trip.new_trip.common.ExpandedBottomSheet;
 import com.byventure.app.ui.trip.new_trip.common.FieldUi;
-import com.byventure.app.ui.trip.new_trip.common.SimpleTextWatcher;
+import com.byventure.app.ui.trip.new_trip.common.FormBottomSheet;
 import com.byventure.app.ui.trip.new_trip.model.BudgetCategory;
 import com.byventure.app.ui.trip.new_trip.model.TripEntry;
 import com.byventure.app.ui.trip.new_trip.common.TripFormats;
@@ -24,18 +23,14 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.android.material.timepicker.MaterialTimePicker;
-import com.google.android.material.timepicker.TimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 /** Попап добавления и редактирования брони/билета. */
-public class TripEntryBottomSheet extends ExpandedBottomSheet {
+public class TripEntryBottomSheet extends FormBottomSheet {
 
     public static final String TAG = "TripEntryBottomSheet";
     private static final String ARG_DATE = "date";
@@ -160,9 +155,9 @@ public class TripEntryBottomSheet extends ExpandedBottomSheet {
             if (existing.getToAddress() != null) b.etToAddress.setText(existing.getToAddress());
         }
 
-        bindText(b.etTitle, this::validateTitle);
-        bindText(b.etFromAddress, this::validateFromAddress);
-        bindText(b.etToAddress, this::validateToAddress);
+        bindText(b.etTitle, this::validateTitle, this::updateButton);
+        bindText(b.etFromAddress, this::validateFromAddress, this::updateButton);
+        bindText(b.etToAddress, this::validateToAddress, this::updateButton);
 
         b.btnFromTime.setOnClickListener(v -> pickTime(fromTime, t -> {
             fromTime = t;
@@ -237,47 +232,6 @@ public class TripEntryBottomSheet extends ExpandedBottomSheet {
         FieldUi.setPickerValue(b.btnToTime,
                 toTime == null ? null : toTime.format(TripFormats.TIME),
                 getString(R.string.time_arrival));
-    }
-
-    private void pickTime(@Nullable LocalTime initial, Consumer<LocalTime> onPicked, Runnable onCancel) {
-        LocalTime init = initial != null ? initial : LocalTime.of(12, 0);
-        MaterialTimePicker picker = new MaterialTimePicker.Builder()
-                .setTimeFormat(TimeFormat.CLOCK_24H)
-                .setHour(init.getHour())
-                .setMinute(init.getMinute())
-                .setTitleText(R.string.picker_time_title)
-                .build();
-        picker.addOnPositiveButtonClickListener(v ->
-                onPicked.accept(LocalTime.of(picker.getHour(), picker.getMinute())));
-        picker.addOnNegativeButtonClickListener(v -> onCancel.run());
-        picker.addOnCancelListener(d -> onCancel.run());
-        picker.show(getChildFragmentManager(), "pick_time");
-    }
-
-    // ---------- валидация ----------
-
-    private void bindText(TextInputEditText et, Predicate<Boolean> validator) {
-        et.addTextChangedListener(new SimpleTextWatcher() {
-            @Override public void afterTextChanged(Editable s) {
-                validator.test(false);
-                updateButton();
-            }
-        });
-        et.setOnFocusChangeListener((v, hasFocus) -> { if (!hasFocus) validator.test(true); });
-    }
-
-    private String text(TextInputEditText et) {
-        return et.getText() == null ? "" : et.getText().toString().trim();
-    }
-
-    /** err == null -> ошибка снимается. Иначе показываем её только если show. */
-    private boolean check(TextInputLayout til, @Nullable String err, boolean show) {
-        if (err == null) {
-            til.setError(null);
-            return true;
-        }
-        if (show) til.setError(err);
-        return false;
     }
 
     private boolean validateTitle(boolean show) {

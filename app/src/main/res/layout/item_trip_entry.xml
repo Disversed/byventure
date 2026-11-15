@@ -30,7 +30,7 @@
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:layout_marginStart="@dimen/relation_level_1"
-        android:background="@drawable/bg_category_icon"
+        android:background="@drawable/bg_category_icon_small"
         android:importantForAccessibility="no"
         android:padding="5dp"
         android:src="@drawable/ic_plus"

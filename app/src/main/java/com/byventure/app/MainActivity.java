@@ -92,7 +92,11 @@ public class MainActivity extends AppCompatActivity {
 
             // «верхнеуровневый» экран = есть в нижнем меню или явно указан в списке
             boolean topLevel = bottomNavigationView.getMenu().findItem(id) != null;
-            toolbar.setNavigationIcon(topLevel ? null : R.drawable.ic_arrow_back);
+            if (topLevel) {
+                toolbar.setNavigationIcon(null);
+            } else {
+                toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+            }
 
             MenuItem settings = toolbar.getMenu().findItem(R.id.action_right_icon);
             if (settings != null) settings.setVisible(topLevel);
