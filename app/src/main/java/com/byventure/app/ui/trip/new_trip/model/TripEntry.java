@@ -1,9 +1,7 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.model;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import com.byventure.app.ui.trip.new_trip.models.BudgetCategory;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

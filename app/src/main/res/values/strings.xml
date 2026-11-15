@@ -95,4 +95,8 @@
     <string name="time_booking">Время</string>
     <string name="time_departure">Отправление</string>
     <string name="time_arrival">Прибытие</string>
+
+    <string name="events_add">Добавить событие</string>
+    <string name="time_event">Время</string>
+    <string name="summary_save">Сохранить маршрут</string>
 </resources>

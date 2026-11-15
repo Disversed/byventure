@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip.bottom_sheets;
+package com.byventure.app.ui.trip.new_trip.dates;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +11,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.SheetNewTripDatesBinding;
-import com.byventure.app.ui.trip.new_trip.FieldUi;
-import com.byventure.app.ui.trip.new_trip.models.NewTripViewModel;
-import com.byventure.app.ui.trip.new_trip.models.TripFormats;
+import com.byventure.app.ui.trip.new_trip.common.FieldUi;
+import com.byventure.app.ui.trip.new_trip.common.ExpandedBottomSheet;
+import com.byventure.app.ui.trip.new_trip.NewTripViewModel;
+import com.byventure.app.ui.trip.new_trip.common.TripFormats;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;

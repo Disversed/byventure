@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
     // Экраны, где скрыто только нижнее меню
     private final Set<Integer> hideBottomBarOn = new HashSet<>(Arrays.asList(
             R.id.newTripBudgetFragment,
-            R.id.newTripTicketsAndBooksFragment
+            R.id.newTripTicketsAndBooksFragment,
+            R.id.newTripEventsFragment,
+            R.id.newTripSummaryFragment
     ));
 
 
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigationView.setVisibility(hideBottom ? View.GONE : View.VISIBLE);
             toolbar.setVisibility(hideAll ? View.GONE : View.VISIBLE);
 
-            // «верхнеуровневый» экран = есть в нижнем меню
+            // «верхнеуровневый» экран = есть в нижнем меню или явно указан в списке
             boolean topLevel = bottomNavigationView.getMenu().findItem(id) != null;
             toolbar.setNavigationIcon(topLevel ? null : R.drawable.ic_arrow_back);
 

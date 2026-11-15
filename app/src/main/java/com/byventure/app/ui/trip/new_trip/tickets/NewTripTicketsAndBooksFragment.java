@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.tickets;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,10 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.byventure.app.R;
 import com.byventure.app.databinding.FragmentNewTripTicketsAndBooksBinding;
-import com.byventure.app.ui.trip.new_trip.models.NewTripViewModel;
-import com.byventure.app.ui.trip.new_trip.recycler_view_logic.TripRowAdapter;
+import com.byventure.app.ui.trip.new_trip.NewTripViewModel;
+import com.byventure.app.ui.trip.new_trip.model.TripEntry;
 
 import java.time.LocalDate;
 
@@ -49,9 +51,8 @@ public class NewTripTicketsAndBooksFragment extends Fragment {
         vm.getEntries().observe(getViewLifecycleOwner(),
                 list -> binding.btnContinue.setEnabled(!list.isEmpty()));
 
-        binding.btnContinue.setOnClickListener(v -> {
-            // TODO: переход к следующему фрагменту флоу
-        });
+        binding.btnContinue.setOnClickListener(v ->
+                NavHostFragment.findNavController(this).navigate(R.id.action_tickets_to_events));
     }
 
     private void showSheet(TripEntryBottomSheet sheet) {

@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip.recycler_view_logic;
+package com.byventure.app.ui.trip.new_trip.tickets;
 
 import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.byventure.app.databinding.ItemAddEntryBinding;
 import com.byventure.app.databinding.ItemDateHeaderBinding;
 import com.byventure.app.databinding.ItemTripEntryBinding;
-import com.byventure.app.ui.trip.new_trip.TripEntry;
-import com.byventure.app.ui.trip.new_trip.models.BudgetCategory;
-import com.byventure.app.ui.trip.new_trip.models.TripFormats;
-import com.byventure.app.ui.trip.new_trip.recycler_view_logic.TripRow;
+import com.byventure.app.ui.trip.new_trip.model.TripEntry;
+import com.byventure.app.ui.trip.new_trip.model.BudgetCategory;
+import com.byventure.app.ui.trip.new_trip.common.TripFormats;
+import com.byventure.app.ui.trip.new_trip.model.TripRow;
 
 import java.time.LocalDate;
 

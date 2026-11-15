@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip;
+package com.byventure.app.ui.trip.new_trip.tickets;
 
 import android.content.Context;
 import android.view.View;

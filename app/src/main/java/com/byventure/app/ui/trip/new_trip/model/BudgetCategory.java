@@ -1,4 +1,4 @@
-package com.byventure.app.ui.trip.new_trip.models;
+package com.byventure.app.ui.trip.new_trip.model;
 
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;

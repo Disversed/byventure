@@ -1,19 +1,17 @@
-package com.byventure.app.ui.trip.new_trip.recycler_view_logic;
-
-import com.byventure.app.ui.trip.new_trip.TripEntry;
+package com.byventure.app.ui.trip.new_trip.model;
 
 import java.time.LocalDate;
 
-//  Этот класс-обертка надо чтобы сделать плоский RecyclerView
+/** Строка списка «по дням»: заголовок дня, карточка (бронь или событие), кнопка «Добавить». */
 public abstract class TripRow {
     public static final int TYPE_HEADER = 0;
     public static final int TYPE_ENTRY = 1;
     public static final int TYPE_ADD = 2;
+    public static final int TYPE_EVENT = 3;
 
-    public abstract int getType(); // вернет тип строки, чтобы отрисовать правильным макетом
+    public abstract int getType();
     public abstract String getKey();
 
-//  Заголовок с датой
     public static final class DateHeader extends TripRow {
         public final LocalDate date;
         public DateHeader(LocalDate date) { this.date = date; }
@@ -21,7 +19,6 @@ public abstract class TripRow {
         @Override public String getKey() { return "header_" + date; }
     }
 
-//  Карточка с билетом или бронью
     public static final class Entry extends TripRow {
         public final TripEntry entry;
         public Entry(TripEntry entry) { this.entry = entry; }
@@ -29,7 +26,13 @@ public abstract class TripRow {
         @Override public String getKey() { return "entry_" + entry.getId(); }
     }
 
-//  Кнопка добавления карточки
+    public static final class EventItem extends TripRow {
+        public final TripEvent event;
+        public EventItem(TripEvent event) { this.event = event; }
+        @Override public int getType() { return TYPE_EVENT; }
+        @Override public String getKey() { return "event_" + event.getId(); }
+    }
+
     public static final class AddButton extends TripRow {
         public final LocalDate date;
         public AddButton(LocalDate date) { this.date = date; }

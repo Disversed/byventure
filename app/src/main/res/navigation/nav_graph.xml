@@ -55,7 +55,7 @@
 
     <fragment
         android:id="@+id/newTripBudgetFragment"
-        android:name="com.byventure.app.ui.trip.new_trip.NewTripBudgetFragment"
+        android:name="com.byventure.app.ui.trip.new_trip.budget.NewTripBudgetFragment"
         android:label="Бюджет">
         <action
             android:id="@+id/action_budget_to_tickets"
@@ -64,6 +64,24 @@
 
     <fragment
         android:id="@+id/newTripTicketsAndBooksFragment"
-        android:name="com.byventure.app.ui.trip.new_trip.NewTripTicketsAndBooksFragment"
-        android:label="Билеты и брони" />
+        android:name="com.byventure.app.ui.trip.new_trip.tickets.NewTripTicketsAndBooksFragment"
+        android:label="Билеты и брони">
+        <action
+            android:id="@+id/action_tickets_to_events"
+            app:destination="@id/newTripEventsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newTripEventsFragment"
+        android:name="com.byventure.app.ui.trip.new_trip.events.NewTripEventsFragment"
+        android:label="События">
+        <action
+            android:id="@+id/action_events_to_summary"
+            app:destination="@id/newTripSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newTripSummaryFragment"
+        android:name="com.byventure.app.ui.trip.new_trip.summary.NewTripSummaryFragment"
+        android:label="Итоговый маршрут" />
+
 </navigation>
