@@ -17,23 +17,20 @@ public class TripPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                // return new RouteFragment(); // Заглушка для "Маршрут"
-                return new TripBudgetFragment(); // Пока вернем BudgetFragment для теста
+                return new TripSummaryFragment();
             case 1:
-                return new TripBudgetFragment(); // Вкладка "Бюджет"
-            case 2:
-                // return new EventsFragment(); // Заглушка для "События"
                 return new TripBudgetFragment();
+            case 2:
+                return new TripEventsFragment();
             case 3:
-                // return new TicketsFragment(); // Заглушка для "Билеты"
                 return new TripTicketsAndBooksFragment();
             default:
-                return new TripBudgetFragment();
+                return new TripSummaryFragment();
         }
     }
 
     @Override
     public int getItemCount() {
-        return 4; // Всего 4 вкладки: Маршрут, Бюджет, События, Билеты
+        return 4;
     }
 }

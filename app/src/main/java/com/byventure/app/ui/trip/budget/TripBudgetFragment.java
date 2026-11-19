@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.FragmentTripBudgetBinding;
-import com.byventure.app.ui.dialogs.AddReceiptSheetFragment;
+import com.byventure.app.ui.trip.details.dialogs.ChangeBudgetSheetFragment;
 
 import java.util.List;
 
@@ -45,6 +45,11 @@ public class TripBudgetFragment extends Fragment {
         setupModeSwitcher();
         initObservers();
 
+        binding.bottomBar.btnBottomAction.setText("Настроить бюджет");
+        binding.bottomBar.btnBottomAction.setOnClickListener(v -> {
+            ChangeBudgetSheetFragment bottomSheet = new ChangeBudgetSheetFragment();
+            bottomSheet.show(getParentFragmentManager(), "ChangeBudgetSheet");
+        });
     }
 
     private void setupRecyclerView() {

@@ -1,4 +1,4 @@
-package com.byventure.app.ui.dialogs;
+package com.byventure.app.ui.trip.details.dialogs;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

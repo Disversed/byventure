@@ -1,7 +1,5 @@
 package com.byventure.app.ui.trip.details;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,8 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.byventure.app.databinding.FragmentTripDetailBinding;
-import com.byventure.app.ui.dialogs.AddReceiptSheetFragment;
-import com.byventure.app.ui.dialogs.ChangeBudgetSheetFragment;
+import com.byventure.app.ui.trip.details.dialogs.ChangeBudgetSheetFragment;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class TripDetailFragment extends Fragment {
@@ -42,47 +39,6 @@ public class TripDetailFragment extends Fragment {
             tab.setText(titles[position]);
         }).attach();
 
-        setupBottomBarForCurrentTab(0);
-        binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                setupBottomBarForCurrentTab(position);
-            }
-        });
-    }
-
-    private void setupBottomBarForCurrentTab(int position) {
-        switch (position) {
-            case 0: // Маршрут
-                binding.bottomBar.btnBottomAction.setText("Добавить точку маршрута");
-                binding.bottomBar.btnBottomAction.setOnClickListener(v -> {
-                    // TODO: Действие для Маршрута
-                });
-                break;
-
-            case 1: // Бюджет
-                binding.bottomBar.btnBottomAction.setText("Настроить бюджет");
-                binding.bottomBar.btnBottomAction.setOnClickListener(v -> {
-                    ChangeBudgetSheetFragment bottomSheet = new ChangeBudgetSheetFragment();
-                    bottomSheet.show(getParentFragmentManager(), "ChangeBudgetSheet");
-                });
-                break;
-
-            case 2: // События
-                binding.bottomBar.btnBottomAction.setText("Добавить событие");
-                binding.bottomBar.btnBottomAction.setOnClickListener(v -> {
-                    // TODO: Действие для Событий
-                });
-                break;
-
-            case 3: // Билеты
-                binding.bottomBar.btnBottomAction.setText("Добавить билет");
-                binding.bottomBar.btnBottomAction.setOnClickListener(v -> {
-                    // TODO: Действие для Билетов
-                });
-                break;
-        }
     }
 
     @Override

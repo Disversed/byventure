@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.byventure.app.R;
 import com.byventure.app.databinding.FragmentMainBinding;
-import com.byventure.app.ui.dialogs.AddReceiptSheetFragment;
+import com.byventure.app.ui.trip.details.dialogs.AddReceiptSheetFragment;
 
 public class MainFragment extends Fragment {
 

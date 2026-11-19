@@ -11,6 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.byventure.app.databinding.FragmentTripTicketsAndBooksBinding;
+import com.byventure.app.ui.trip.new_trip.model.TripEntry;
+import com.byventure.app.ui.trip.new_trip.tickets.TripEntryBottomSheet;
+import com.byventure.app.ui.trip.new_trip.tickets.TripRowAdapter;
+
+import java.time.LocalDate;
 
 public class TripTicketsAndBooksFragment extends Fragment {
 
@@ -28,14 +33,25 @@ public class TripTicketsAndBooksFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         TripViewModel vm = new ViewModelProvider(requireActivity()).get(TripViewModel.class);
 
-        TripRowAdapter adapter = new TripRowAdapter(date -> {
-            if (getChildFragmentManager().findFragmentByTag(AddTripEntryBottomSheet.TAG) != null) return;
-            AddTripEntryBottomSheet.newInstance(date)
-                    .show(getChildFragmentManager(), AddTripEntryBottomSheet.TAG);
+        TripRowAdapter adapter = new TripRowAdapter(new TripRowAdapter.Listener() {
+            @Override
+            public void onAddClick(LocalDate date) {
+                showSheet(TripEntryBottomSheet.forNewEntry(date));
+            }
+
+            @Override
+            public void onEntryClick(TripEntry entry) {
+                showSheet(TripEntryBottomSheet.forEditing(entry));
+            }
         });
         binding.rvEntries.setAdapter(adapter);
 
         vm.getRows().observe(getViewLifecycleOwner(), adapter::submitList);
+    }
+
+    private void showSheet(TripEntryBottomSheet sheet) {
+        if (getChildFragmentManager().findFragmentByTag(TripEntryBottomSheet.TAG) != null) return;
+        sheet.show(getChildFragmentManager(), TripEntryBottomSheet.TAG);
     }
 
     @Override
